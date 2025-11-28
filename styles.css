@@ -1,0 +1,370 @@
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: #2c2c2c;
+  --accent-color: #8b7355;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Navbar */
+.custom-navbar {
+  background: rgba(44, 44, 44, 0.95) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.custom-navbar.scrolled {
+  background: var(--secondary-color) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #000 100%),
+  url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sections */
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+/* Colecciones */
+.coleccion-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.coleccion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.coleccion-img {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.coleccion-card:hover .coleccion-img {
+  transform: scale(1.05);
+}
+
+/* Personalización */
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.custom-list i {
+  color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.personalization-showcase {
+  position: relative;
+}
+
+.personalization-showcase::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  background: var(--primary-color);
+  z-index: -1;
+  border-radius: 10px;
+}
+
+/* Testimonios */
+.testimonio-card {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonio-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonio-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* Botones */
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  padding: 12px 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #b8941f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline-light:hover {
+  color: var(--secondary-color);
+}
+
+/* Formulario */
+.form-control {
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Botón flotante de WhatsApp */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+  }
+
+  .whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+  }
+
+  .whatsapp-link:hover {
+    background: #128C7E;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  }
+
+  @keyframes pulse-whatsapp {
+    0% {
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+    }
+    100% {
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+  }
+  /* Estilos para la galería de productos */
+  .product-gallery {
+    position: relative;
+  }
+
+  .main-image {
+    border: 2px solid #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f8f9fa;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-image img {
+    transition: transform 0.3s ease;
+  }
+
+  .main-image:hover img {
+    transform: scale(1.02);
+  }
+
+  .thumbnail-container {
+    margin-top: 15px;
+  }
+
+  .thumbnail-img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .thumbnail-img:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+
+  .thumbnail-img.active {
+    border-color: var(--primary-color);
+    border-width: 3px;
+  }
+
+  /* Información del producto */
+  .product-info {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+
+  .features ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .features ul li:last-child {
+    border-bottom: none;
+  }
+
+  .product-actions .btn {
+    padding: 12px;
+    font-weight: 500;
+  }
+
+  /* Badge para cantidad de imágenes */
+  .badge.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color), #b8941f) !important;
+    font-size: 0.8rem;
+  }
+
+  /* Efectos de hover en las cards */
+  .coleccion-card {
+    transition: all 0.3s ease;
+  }
+
+  .coleccion-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .thumbnail-img {
+      height: 60px;
+    }
+
+    .main-image {
+      min-height: 250px;
+    }
+
+    .product-info {
+      margin-top: 20px;
+    }
+  }
+
+  /* Animación para cambio de imagen */
+  .fade-in-image {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+  }
+
+}
